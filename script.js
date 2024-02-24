@@ -60,6 +60,7 @@ tl.to("#loader",{
     opacity:0,
     delay:3,
     duration:1,
+    zIndex:0,
 })
 
 tl.from("#page1 img",{
@@ -67,6 +68,36 @@ tl.from("#page1 img",{
     duration:0.5,
     y:1000,
 })
+tl.from("#page2 h1",{
+  opacity:0,
+  duration:0.5,
+  y:1000,
+})
+
+gsap.to("#page2 #right h1",{
+  duration:1,
+  stagger:1,
+  y:"-10",
+  scrollTrigger:{
+    trigger:"#page2 #right",
+    scroll:"body",
+    start:"top 60%",
+    end:"top 100%",
+    scrub:1,
+  }
+})
+gsap.from("#page4 h1",{
+  duration:1,
+  x:"-100vh",
+  scrollTrigger:{
+    trigger:"#page4",
+    scroll:"body",
+    start:"top 50%",
+    end:"top 10",
+    scrub:1,
+  }
+})
+
 gsap.to("#page5 #swiper",{
     transform:"translateX(-100%)",
     scrollTrigger:{
